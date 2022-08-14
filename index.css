@@ -1,0 +1,149 @@
+/*
+
+      Name: Khoa Luong
+      Date: Oct 11th 2018
+
+      Stylesheet for index.html, this style helps to give the html files
+      a "comic book" look.
+
+      I tried to design this in a comic book style look to match up with
+      the aesthetic of the show. This includes choosing a suitable font,
+      using bright colors to mimic how flashy comic books are, editing
+      sections and background to mimic comic book panels.
+
+      Some notable CSS usage includes using custom fonts, background blend
+      mode (to create a comic book panel effect with gradient stock images),
+      using grid display, using element position (in this case sticky) to
+      make the header element follow as the user scrolls down.
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+#logo {
+  height: 100px;
+  margin-left: 10px;
+}
+
+body, #description, #profile, #abilities, #classList {
+  background-blend-mode: overlay;
+}
+
+/* https://mbtskoudsalg.com/images/comic-book-overlay-png-3.png
+*/
+body, #description, #classList {
+  background-image: url("images/background.png");
+  background-size: 200px;
+}
+
+body {
+  background-attachment: fixed;
+  background-color: #fff300;
+}
+
+main, footer {
+  font-family: "Oswald", sans-serif;
+}
+
+main {
+  font-size: 20px;
+  width: 65%;
+  margin: auto;
+}
+
+h1, h2, h3{
+  font-family: "Bangers", cursive;
+}
+
+header, #profile, #description, #abilities, #example, #classList {
+  border-radius: 15px;
+  border: thick solid black;
+}
+
+header, #profile, #abilities {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  margin: 0.5em;
+  color: #fff300;
+  text-shadow: -4px 4px #ef525f, 4px -4px black;
+}
+
+header, footer {
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+}
+/* https://image.winudf.com/v2/image/Y29tLk15SGVyb0FjYWRlbWlhLm1heF9zY3JlZW5fMF8xNTMzNzEzODg4XzA3OQ/screen-0.jpg?h=800&fakeurl=1&type=.jpg */
+header {
+  background-image: url("images/banner.jpg");
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  font-size: 25px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+h2 {
+  width: max-content;
+  padding: 0.5em;
+}
+
+/* https://pixabay.com/p-744404/?no_redirect */
+#profile {
+  grid-row: 1/3;
+  background-image: url("images/pictureBack.png");
+  background-color: #b5d4b3;
+}
+
+#description, #explanation {
+  padding: 18px;
+}
+
+#description {
+  background-color: #faf3e5;
+  display: grid;
+  grid-template-columns: 450px 1fr;
+}
+
+/* https://ubisafe.org/images/line-transparent-speed-1.png */
+#abilities {
+  background-color: #d0f4f5;
+  background-image: url("images/actionLine.png");
+}
+
+#example {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+}
+
+#classList {
+  background-color: #b03755;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, auto);
+}
+
+#classList > a > img {
+  margin: 15px;
+  border: thick dotted white;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  border: thick solid white;
+  margin-top: 2%;
+  color: white;
+}
+
+footer > img {
+  height: 50px;
+}
